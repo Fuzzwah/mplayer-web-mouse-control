@@ -34,6 +34,6 @@ The favicon is a remote control icon designed by [FatCow - Udderly Fantastic Hos
 
 The front-end uses [Twitter Bootstrap](https://github.com/twitter/bootstrap) for styling, which is released under the [Apache License](https://github.com/twitter/bootstrap/blob/master/LICENSE)
 
-I've added Font Awesome for the icons. It is released under a [SIL OFL 1.1 / MIT License](http://fortawesome.github.io/Font-Awesome/license/)
+I've added [Font Awesome](http://fortawesome.github.io/Font-Awesome/) for the icons. It is released under a [SIL OFL 1.1 / MIT License](http://fortawesome.github.io/Font-Awesome/license/)
 
 A copy of the fantastic [Angular.js](http://angularjs.org/) is included for ease of use. It's released under an [MIT-style expat license](https://github.com/angular/angular.js/blob/master/LICENSE)
