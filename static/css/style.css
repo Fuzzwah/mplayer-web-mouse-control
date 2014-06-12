@@ -1,22 +1,24 @@
 /** The Control Panel *******************************************/
-#controls { text-align: center; width: 100%; height: 100px; top: 0px; padding: 5px 0px; background-color: rgba(255, 255, 255, 0.8); }
+#controls { margin-left: -20px; text-align: center; width: 100%; height: 200px; top: 0px; padding: 5px 0px; background-color: rgba(255, 255, 255, 0.8); }
 #controls ul { list-style-type: none; margin: 0px; margin-bottom: 3px; }
 #controls li { display: inline; }
-#controls button { height: 42px; }
+#controls button { min-width: 84px; height: 84px; }
 
 /** The Main File List ******************************************/
-#file-list { list-style-type: none; width: 350px; margin: auto; margin-top: 120px; }
+#file-list { height: 30px; list-style-type: none; width: 370px; margin-left: -20px; margin-top: 210px; }
 #file-list li { margin-bottom: 10px; padding: 3px; clear: both; }
 #file-list li button { margin-top: 0px; float: left; margin-right: 5px; }
-#file-list li a { min-height: 20px; padding: 4px; float: left; border: 1px solid #ddd; border-radius: 5px; background: right no-repeat; background-size: 50px; font-weight: bolder; }
-#file-list li a.dir-link { white-space: nowrap; width: 220px; }
-#file-list li a.file-link, #file-list li a.dir-link.buttonless { word-break: break-all; width: 320px; }
+#file-list li a { min-height: 22px; padding: 4px; float: left; border: 1px solid #ddd; border-radius: 5px; background: right no-repeat; background-size: 50px; font-size: 20px; }
+#file-list li a.dir-link { white-space: nowrap; width: 240px; }
+#file-list li a.file-link, #file-list li a.dir-link.buttonless { word-break: break-all; width: 340px; }
 
-#file-list li.directory a { background-image: url(watermark/folder.png); }
-#file-list li.mp4 a, #file-list li.mov a, #file-list li.ogv a { background-image: url(watermark/video.png); }
-#file-list li.mp3 a, #file-list li.ogg a { background-image: url(watermark/audio.png); }
+.child {
+    position: absolute;
+    right: 15px;
+    margin-top: 10px;
+}
 
 /** The Action Feed *********************************************/
-#playlist { list-style-type: none; width: 350px; margin: 3px auto; padding-top: 5px; clear: both; text-align: center; }
+#playlist { list-style-type: none; width: 370px; margin-left: -20px; padding-top: 5px; clear: both; text-align: center; }
 #playlist li { font-size: xx-small; border: 1px solid #ddd; border-radius: 5px; padding: 0px 15px; margin: 3px; width: 298px; background-color: #eee; color: #aaa; }
 #playlist li.now-playing { font-size: medium; font-weight: bold; color: #000; }
