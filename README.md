@@ -14,9 +14,9 @@ Note: the page will not work in Chrome for Android. It will work in standard And
 
 #### Installation
 
-1. Download the zip or clone the repo into a directory in your home directory.
+1) Download the zip or clone the repo into a directory in your home directory.
 
-2. If you're on Raspbian, Debian or Ubuntu, you can install everything else you need by running the following commands:
+2) If you're on Raspbian, Debian or Ubuntu, you can install everything else you need by running the following commands:
 
     sudo apt-get install mplayer python-setuptools python-pip build-essential evtest
     sudo easy_install tornado
@@ -24,12 +24,12 @@ Note: the page will not work in Chrome for Android. It will work in standard And
     sudo pip install --upgrade virtualenv 
     sudo pip install --upgrade evdev
 
-3. Configure a few things, open each of the following files in a text editor and find the config section to get things set up:
+3) Configure a few things, open each of the following files in a text editor and find the config section to get things set up:
 
     nano mplayer-web-mouse-remote-control
     nano conf.py
 
-4a. If you want to run the system as a service do the following:
+4a) If you want to run the system as a service do the following:
     
     sudo cp mplayer-web /etc/init.d/
     sudo chmod 755 /etc/init.d/mplayer-web
@@ -37,7 +37,7 @@ Note: the page will not work in Chrome for Android. It will work in standard And
     sudo chmod 755 /etc/init.d/mplayer-mouse
     sudo update-rc.d mplayer-web-mouse-remote-control defaults
 
-4b. Or you can fire the two python scripts and stick them into the background using screen:
+4b) Or you can fire the two python scripts and stick them into the background using screen:
 
     sudo apt-get install screen
     screen -dmS mplayer-web python main.py
