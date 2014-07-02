@@ -1,31 +1,63 @@
-## Web-Mote
+## MPlayer Web and Mouse Remote Control
 
-A web-based interface for MPlayer written in Python.
+A Python based HTTP server which passes commands to mplayer from a website and mouse buttons.
 
-It is a fork of https://github.com/Inaimathi/web-mote which was created with an interface suited to an iPod touch. I have modified the style sheet to make it suitable for use on an Android phone.
+#### Purpose
 
-Note: the page will not work in Chrome for Android. It will work in Dolphin Browser with out issue.
+I've rigged this system up to run on a headless raspberry pi (running raspbian) in my baby's bedroom. It allows us to trigger playback of a music play list which we call our 'sleepy baby bedtime megamix'. Playback can be controlled either by clicking buttons on a wireless mouse which sits on the change table or via a webpage accessed from either a computer or our Android phones. The intial idea was to allow me to kick off playback in the middle of the night with out getting out of bed, if we heard our baby stirring.
+
+The mouse controls are: left button starts playback, right button stops playback, mouse wheel to control volume up or down.
+
+It is a fork of https://github.com/Inaimathi/web-mote which was created with an interface suited to an iPod touch. I have modified the style sheet to make it suitable for use on an Android phone. I then added all the mouse control functions.
+
+Note: the page will not work in Chrome for Android. It will work in standard Android Browser with out issue.
+
+#### Installation
+
+1. Download the zip or clone the repo into a directory in your home directory.
+
+2. If you're on Raspbian, Debian or Ubuntu, you can install everything else you need by running the following commands:
+
+    sudo apt-get install mplayer python-setuptools python-pip build-essential evtest
+    sudo easy_install tornado
+    sudo pip install --upgrade pip 
+    sudo pip install --upgrade virtualenv 
+    sudo pip install --upgrade evdev
+
+3. Configure a few things, open each of the following files in a text editor and find the config section to get things set up:
+
+    nano mplayer-web-mouse-remote-control
+    nano conf.py
+
+4a. If you want to run the system as a service do the following:
+    
+    sudo cp mplayer-web /etc/init.d/
+    sudo chmod 755 /etc/init.d/mplayer-web
+    sudo cp mplayer-mouse /etc/init.d/
+    sudo chmod 755 /etc/init.d/mplayer-mouse
+    sudo update-rc.d mplayer-web-mouse-remote-control defaults
+
+4b. Or you can fire the two python scripts and stick them into the background using screen:
+
+    sudo apt-get install screen
+    screen -dmS mplayer-web python main.py
+    screen -dmS mplayer-mouse python mouse-ctrl.py
+
+Then you can attach to each screen using `screen -r mplayer-web` or `screen -r mplayer-mouse` and detach with `Ctrl+a Ctrl+d`.
 
 #### Usage
 
-1. install the dependencies
-2. run `python main.py`
-3. navigate to `http://[machine ip]:8080` to use the remote menu
-
-You can run it in the background using GNU Screen. Assuming you have it installed, you start a background server with `screen -dmS web-mote python main.py`, attach to it using `screen -r web-mote` and detach with `Ctrl+a Ctrl+d`.
+1. navigate to `http://[machine ip]:8080` to use the remote web menu
+2. click the left mouse button to trigger playback
+3. click the right mouse button to stop playback
+4. use the mouse wheel to control the volume
 
 #### Dependencies
 
 - [Python 2.7](http://python.org/download/releases/2.7/)
 - [mplayer](http://www.mplayerhq.hu/design7/news.html)
-- OPTIONALLY [omxplayer](https://github.com/huceke/omxplayer) *if you're on [Raspbian](http://www.raspbian.org/), you already have this. If you're not, you probably don't need it.*
-- OPTIONALLY [GNU Screen](http://www.gnu.org/software/screen/) *you'll need this or similar to run web-mote in the background*
+- [GNU Screen](http://www.gnu.org/software/screen/)
 - Python [tornado](http://www.tornadoweb.org/) module
-
-If you're on Debian or Raspbian, you can install everything you need by running the following as `root`:
-
-    sudo apt-get install mplayer screen python-setuptools
-    sudo easy_install tornado
 
 #### Licensing/Components
 This program is released under the GNU AGPL (check the `LICENSE` file for details).
