@@ -31,10 +31,8 @@ Note: the page will not work in Chrome for Android. It will work in standard And
 
 4a) If you want to run the system as a service do the following:
     
-    sudo cp mplayer-web /etc/init.d/
-    sudo chmod 755 /etc/init.d/mplayer-web
-    sudo cp mplayer-mouse /etc/init.d/
-    sudo chmod 755 /etc/init.d/mplayer-mouse
+    sudo cp mplayer-web-mouse-remote-control /etc/init.d/
+    sudo chmod 755 /etc/init.d/mplayer-web-mouse-remote-control
     sudo update-rc.d mplayer-web-mouse-remote-control defaults
 
 4b) Or you can fire the two python scripts and stick them into the background using screen:
