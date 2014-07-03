@@ -30,7 +30,9 @@ Note: the page will not work in Chrome for Android. It will work in standard And
     nano conf.py
 
 4a) If you want to run the system as a service do the following:
-    
+
+    sudo chmod 755 main.py
+    sudo chmod 755 mouse-ctrl.py    
     sudo cp mplayer-web-mouse-remote-control /etc/init.d/
     sudo chmod 755 /etc/init.d/mplayer-web-mouse-remote-control
     sudo update-rc.d mplayer-web-mouse-remote-control defaults
