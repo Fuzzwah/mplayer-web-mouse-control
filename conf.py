@@ -5,4 +5,4 @@ root = ["/home/pi/music"]
 leftclick_play_dir = "/home/pi/music/World Lullabies"
 
 # the input/event# of your mouse, confirm with evtest
-dev = InputDevice('/dev/input/event2')  
+mouse = "/dev/input/event2"

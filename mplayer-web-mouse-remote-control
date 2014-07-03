@@ -1,4 +1,4 @@
-#! /bin/sh
+#!/bin/sh
 
 ### BEGIN INIT INFO
 # Provides:          mplayer-web-mouse-remote-control
@@ -11,7 +11,7 @@
 ### END INIT INFO
 
 # Configure these:
-DIR=/home/pi/mplayer-web-mouse-remote-control/
+DIR=/home/pi/mplayer-web-mouse-remote-control
 DAEMON_USER=pi
 # End of Config
 
@@ -19,8 +19,8 @@ WEB_DAEMON=$DIR/main.py
 WEB_DAEMON_NAME=mplayer-web
 MOUSE_DAEMON=$DIR/mouse-ctrl.py
 MOUSE_DAEMON_NAME=mplayer-mouse
-WEB_PIDFILE=/var/run/$WEB_DAEMON_NAME.pid
-MOUSE_PIDFILE=/var/run/$MOUSE_DAEMON_NAME.pid
+WEB_PIDFILE=$DIR/$WEB_DAEMON_NAME.pid
+MOUSE_PIDFILE=$DIR/$MOUSE_DAEMON_NAME.pid
 
 . /lib/lsb/init-functions
  
@@ -55,8 +55,8 @@ case "$1" in
         ;;
  
     status)
-        status_of_proc "$WEB_DAEMON_NAME" "$WEB_DAEMON" && exit 0 || exit $?
-        status_of_proc "$MOUSE_DAEMON_NAME" "$MOUSE_DAEMON" && exit 0 || exit $?
+        status_of_proc -p $WEB_PIDFILE "$WEB_DAEMON_NAME" "$WEB_DAEMON"
+        status_of_proc -p $MOUSE_PIDFILE "$MOUSE_DAEMON_NAME" "$MOUSE_DAEMON"
         ;;
     *)
         echo "Usage: /etc/init.d/mplayer-web-mouse-remote-control {start|stop|restart|status}"

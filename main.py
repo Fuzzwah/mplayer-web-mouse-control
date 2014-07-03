@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 import tornado.ioloop, tornado.web, os, json, random, time
 import util, conf, sse, player
 

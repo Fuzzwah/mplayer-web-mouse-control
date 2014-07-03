@@ -1,13 +1,14 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
 import requests
 from evdev import InputDevice
 from select import select
-import conf
+from conf import *
 
 params = {}
 webmoteurl = ''
+dev = InputDevice(mouse)
 
 while True:
     (r, w, x) = select([dev], [], [])
