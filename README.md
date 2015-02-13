@@ -21,6 +21,7 @@ Note: the page will not work in Chrome for Android. It will work in standard And
     sudo apt-get install mplayer python-setuptools python-pip build-essential evtest
     sudo easy_install tornado
     sudo pip install --upgrade pip 
+    sudo pip install --upgrade requests
     sudo pip install --upgrade virtualenv 
     sudo pip install --upgrade evdev
 
