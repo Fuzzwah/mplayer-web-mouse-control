@@ -48,7 +48,7 @@ Then you can attach to each screen using `screen -r mplayer-web` or `screen -r m
 
 #### Usage
 
-1. navigate to `http://[machine ip]:8080` to use the remote web menu
+1. navigate to `http://[machine ip]` to use the remote web menu
 2. click the left mouse button to trigger playback
 3. click the right mouse button to stop playback
 4. use the mouse wheel to control the volume

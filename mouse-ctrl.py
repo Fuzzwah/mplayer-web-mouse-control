@@ -24,7 +24,7 @@ while True:
             if event.value == -1:
                 print 'vol down'
                 params = {'command': 'volume-down'}
-                webmoteurl = 'http://localhost:8080/command'
+                webmoteurl = 'http://localhost/command'
                 myheaders = {'User-Agent': 'Mozilla/5.0'}
                 r = requests.post(webmoteurl, data=params,
                                  headers=myheaders)
@@ -32,7 +32,7 @@ while True:
             elif event.value == 1:
                 print 'vol up'
                 params = {'command': 'volume-up'}
-                webmoteurl = 'http://localhost:8080/command'
+                webmoteurl = 'http://localhost/command'
                 myheaders = {'User-Agent': 'Mozilla/5.0'}
                 r = requests.post(webmoteurl, data=params,
                                  headers=myheaders)
@@ -42,7 +42,7 @@ while True:
             print event.value
             print 'play'
             params = {'command': 'play', 'target': leftclick_play_dir}
-            webmoteurl = 'http://localhost:8080/play'
+            webmoteurl = 'http://localhost/play'
             myheaders = {'User-Agent': 'Mozilla/5.0'}
             r = requests.post(webmoteurl, data=params, headers=myheaders)
             print r.status_code
@@ -51,7 +51,7 @@ while True:
             print event.value
             print 'stop'
             params = {'command': 'stop'}
-            webmoteurl = 'http://localhost:8080/command'
+            webmoteurl = 'http://localhost/command'
             myheaders = {'User-Agent': 'Mozilla/5.0'}
             r = requests.post(webmoteurl, data=params, headers=myheaders)
             print r.status_code
