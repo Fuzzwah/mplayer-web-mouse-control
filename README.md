@@ -18,12 +18,10 @@ Note: the page will not work in Chrome for Android. It will work in standard And
 
 2) If you're on Raspbian, Debian or Ubuntu, you can install everything else you need by running the following commands:
 
-    sudo apt-get install mplayer python-setuptools python-pip build-essential evtest
+    sudo apt-get install git mplayer python-setuptools python-pip build-essential python-dev evtest 
     sudo easy_install tornado
     sudo pip install --upgrade pip 
-    sudo pip install --upgrade requests
-    sudo pip install --upgrade virtualenv 
-    sudo pip install --upgrade evdev
+    sudo pip install requests evdev
 
 3) Configure a few things, open each of the following files in a text editor and find the config section to get things set up:
 
@@ -41,8 +39,8 @@ Note: the page will not work in Chrome for Android. It will work in standard And
 4b) Or you can fire the two python scripts and stick them into the background using screen:
 
     sudo apt-get install screen
-    screen -dmS mplayer-web python main.py
-    screen -dmS mplayer-mouse python mouse-ctrl.py
+    screen -dmS mplayer-web sudo python main.py
+    screen -dmS mplayer-mouse sudo python mouse-ctrl.py
 
 Then you can attach to each screen using `screen -r mplayer-web` or `screen -r mplayer-mouse` and detach with `Ctrl+a Ctrl+d`.
 
