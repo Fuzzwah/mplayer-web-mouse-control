@@ -11,9 +11,8 @@
       <ul id="file-list" ng-controller="FileListCtrl" ng-init="navigate()">
     <li class="{{file.type}}" ng-repeat="file in filesList" ng-switch="file.type">
       <span ng-switch-when="directory">
-        <button class="play btn" ng-click="play(file.path)"><i class="fa fa-play fa-lg"></i></button>
-        <button class="shuffle btn" ng-click="shuffle(file.path)"><i class="fa fa-random fa-lg"></i></button>
-        <a class="dir-link" ng-click="navigate(file.path)">{{file.name}}</a><i class="fa fa-folder-open fa-2x child"></i>
+        <button class="play btn" ng-click="play(file.path)"><i class="fa fa-play fa-3x"></i></button>
+        <a class="dir-link" ng-click="navigate(file.path)">{{file.name}}</a>
       </span>
       <a class="dir-link buttonless" ng-switch-when="return" ng-click="navigate(file.path)">{{file.name}}</a>
       <a class="file-link" ng-switch-default ng-click="play(file.path)">{{file.name}}</a>
