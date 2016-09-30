@@ -26,8 +26,6 @@
 #file-list {
     height: 30px;
     list-style-type: none;
-    width: 370px;
-    margin-left: -20px;
     margin-top: 210px;
 }
 #file-list li {
