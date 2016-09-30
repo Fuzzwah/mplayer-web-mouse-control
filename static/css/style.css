@@ -51,12 +51,10 @@
 }
 #file-list li a.dir-link {
     white-space: nowrap;
-    width: 240px;
 }
 #file-list li a.file-link,
 #file-list li a.dir-link.buttonless {
     word-break: break-all;
-    width: 340px;
 }
 .child {
     position: absolute;
@@ -67,7 +65,7 @@
 
 #playlist {
     list-style-type: none;
-    width: 370px;
+    width: 100%;
     padding-top: 5px;
     clear: both;
     text-align: center;
@@ -78,7 +76,7 @@
     border-radius: 5px;
     padding: 0px 15px;
     margin: 3px;
-    width: 298px;
+    width: 100%;
     background-color: #eee;
     color: #aaa;
 }
