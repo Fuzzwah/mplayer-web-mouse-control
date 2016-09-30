@@ -65,7 +65,7 @@
 
 #playlist {
     list-style-type: none;
-    width: 100%;
+    width: 65%;
     padding-top: 5px;
     clear: both;
     text-align: center;
@@ -76,7 +76,7 @@
     border-radius: 5px;
     padding: 0px 15px;
     margin: 3px;
-    width: 100%;
+    width: 65%;
     background-color: #eee;
     color: #aaa;
 }
