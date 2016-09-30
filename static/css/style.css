@@ -3,7 +3,7 @@
 #controls {
     margin-left: -20px;
     text-align: center;
-    width: 100%;
+    width: 370px;
     height: 200px;
     top: 0px;
     padding: 5px 0px;
@@ -26,7 +26,7 @@
 #file-list {
     height: 30px;
     list-style-type: none;
-    width: 100%;
+    width: 370px;
     margin-left: -20px;
     margin-top: 210px;
 }
@@ -48,17 +48,18 @@
     border-radius: 5px;
     background: right no-repeat;
     background-size: 50px;
-    font-size: 72px;
-    line-height: 72px;
+    font-size: 70px;
+    line-height: 70px;
+    margin-right: 5px;
 }
 #file-list li a.dir-link {
     white-space: nowrap;
-    width: 80%;
+    width: 255px;
 }
 #file-list li a.file-link,
 #file-list li a.dir-link.buttonless {
     word-break: break-all;
-    width: 80%;
+    width: 255px;
 }
 .child {
     position: absolute;
@@ -69,7 +70,7 @@
 
 #playlist {
     list-style-type: none;
-    width: 80%;
+    width: 255px;
     margin-left: -20px;
     padding-top: 5px;
     clear: both;
@@ -81,7 +82,7 @@
     border-radius: 5px;
     padding: 0px 15px;
     margin: 3px;
-    width: 80%;
+    width: 255px;
     background-color: #eee;
     color: #aaa;
 }
