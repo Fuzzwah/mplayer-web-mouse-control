@@ -11,7 +11,7 @@
       <ul id="file-list" ng-controller="FileListCtrl" ng-init="navigate()">
     <li class="{{file.type}}" ng-repeat="file in filesList" ng-switch="file.type">
       <span ng-switch-when="directory">
-        <button class="play btn" ng-click="play(file.path)"><i class="fa fa-play fa-3x"></i></button>
+        <button class="play btn" ng-click="play(file.path)"><i class="fa fa-play fa-5x"></i></button>
         <a class="dir-link" ng-click="navigate(file.path)">{{file.name}}</a>
       </span>
       <a class="dir-link buttonless" ng-switch-when="return" ng-click="navigate(file.path)">{{file.name}}</a>
