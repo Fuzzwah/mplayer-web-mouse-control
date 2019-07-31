@@ -6,3 +6,6 @@ leftclick_play_dir = "/home/pi/music/World Lullabies"
 
 # the input/event# of your mouse, confirm with evtest
 mouse = "/dev/input/event2"
+
+## what port do you want the HTTP server to listen on
+httpport = 8080
