@@ -1,6 +1,6 @@
 ## MPlayer Web and Mouse Remote Control
 
-A Python based HTTP server which passes commands to mplayer from a website and mouse buttons.
+A Python3 based HTTP server which passes commands to mplayer from a website and mouse buttons.
 
 #### Purpose
 
@@ -19,16 +19,16 @@ Note: the page will not work in Chrome for Android. It will work in standard And
 2) If you're on Raspbian, Debian or Ubuntu, you can install everything else you need by running the following commands:
 
     ```
-    sudo apt-get install git mplayer python-setuptools python-pip build-essential python-dev evtest 
-    sudo easy_install tornado
-    sudo pip install --upgrade pip 
-    sudo pip install requests evdev
+    sudo apt-get install git mplayer python3-setuptools python3-pip build-essential python3-dev evtest 
+    sudo pip3 install --upgrade pip 
+    sudo pip3 install requests evdev tornado
     ```
 
 3) Configure a few things, open each of the following files in a text editor and find the config section to get things set up:
 
     ```
-    cd mplayer-web-mouse-remote-control
+    cd mplayer-web-mouse-control
+    nano mplayer-web-mouse-control
     nano conf.py
     ```
 
@@ -37,9 +37,9 @@ Note: the page will not work in Chrome for Android. It will work in standard And
     ```
     sudo chmod 755 main.py
     sudo chmod 755 mouse-ctrl.py    
-    sudo cp mplayer-web-mouse-remote-control /etc/init.d/
-    sudo chmod 755 /etc/init.d/mplayer-web-mouse-remote-control
-    sudo update-rc.d mplayer-web-mouse-remote-control defaults
+    sudo cp mplayer-web-mouse-control /etc/init.d/
+    sudo chmod 755 /etc/init.d/mplayer-web-mouse-control
+    sudo update-rc.d mplayer-web-mouse-control defaults
     ```
 
     **OR** you can fire the two python scripts and stick them into the background using screen:
