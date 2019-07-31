@@ -28,7 +28,7 @@ Note: the page will not work in Chrome for Android. It will work in standard And
 3) Configure a few things, open each of the following files in a text editor and find the config section to get things set up:
 
     ```
-    nano mplayer-web-mouse-remote-control
+    cd mplayer-web-mouse-remote-control
     nano conf.py
     ```
 
