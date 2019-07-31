@@ -56,5 +56,5 @@ settings = {
 app = tornado.web.Application(urls, **settings)
 
 if __name__ == "__main__":
-    app.listen(httpport)
+    app.listen(conf.httpport)
     tornado.ioloop.IOLoop.instance().start()
