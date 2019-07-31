@@ -1,6 +1,11 @@
 from subprocess import Popen, PIPE, call
 from threading import Thread
-from Queue import Queue
+import sys
+is_py2 = sys.version[0] == '2'
+if is_py2:
+    import queue as queue
+else:
+    import queue as queue
 import os
 import util, conf
 from main import ServerStatus
@@ -24,11 +29,11 @@ commandTable = {
 ### END THE MASSIVE CONFIG
 ############################################################
 try:
-    commandQueue ## Global multi-process queue to accept player commands
+    commandqueue ## Global multi-process queue to accept player commands
     playQ        ## Global multi-process queue to accept files to play
 except:
-    commandQueue = Queue()
-    playQ = Queue()
+    commandqueue = queue()
+    playQ = queue()
 
 def listen():
     while True:
@@ -40,15 +45,15 @@ def listen():
             playFile(playerCmd, aFile, cmdTable)
 
 def playFile(playerCmd, fileName, cmdTable):
-    __clearQueue(commandQueue)
+    __clearqueue(commandqueue)
     activePlayer = Popen(playerCmd + [fileName], stdin=PIPE)
     while activePlayer.poll() == None:
         try:
-            res = commandQueue.get(timeout=1)
+            res = commandqueue.get(timeout=1)
             activePlayer.stdin.write(cmdTable[res])
             if unicode(res) == unicode("stop"):
                 ServerStatus.send(util.nameToTitle(fileName), event="stopped")
-                __clearQueue(playQ)
+                __clearqueue(playQ)
                 activePlayer.terminate()
                 return False
         except:
@@ -62,7 +67,7 @@ def __getPlayerCommand(filename):
     name, ext = os.path.splitext(filename)
     return playerTable.get(ext[1:], defaultPlayer)
 
-def __clearQueue(q):
+def __clearqueue(q):
     while not q.empty():
         q.get()
     return True
