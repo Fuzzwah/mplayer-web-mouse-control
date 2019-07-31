@@ -42,15 +42,17 @@ Note: the page will not work in Chrome for Android. It will work in standard And
     sudo update-rc.d mplayer-web-mouse-control defaults
     ```
 
+    Then you can start the service using `sudo service mplayer-web-mouse-control start`.
+
     **OR** you can fire the two python scripts and stick them into the background using screen:
 
     ```
     sudo apt-get install screen
-    screen -dmS mplayer-web sudo python main.py
-    screen -dmS mplayer-mouse sudo python mouse-ctrl.py
+    screen -dmS mplayer-web sudo python3 main.py
+    screen -dmS mplayer-mouse sudo python3 mouse-ctrl.py
     ```
 
-Then you can attach to each screen using `screen -r mplayer-web` or `screen -r mplayer-mouse` and detach with `Ctrl+a Ctrl+d`.
+    Then you can attach to each screen using `screen -r mplayer-web` or `screen -r mplayer-mouse` and detach with `Ctrl+a Ctrl+d`.
 
 #### Usage
 
