@@ -11,7 +11,7 @@
 ### END INIT INFO
 
 # Configure these:
-DIR=/home/pi/mplayer-web-mouse-remote-control
+DIR=/home/pi/mplayer-web-mouse-control
 DAEMON_USER=pi
 # End of Config
 
@@ -59,7 +59,7 @@ case "$1" in
         status_of_proc -p $MOUSE_PIDFILE "$MOUSE_DAEMON_NAME" "$MOUSE_DAEMON"
         ;;
     *)
-        echo "Usage: /etc/init.d/mplayer-web-mouse-remote-control {start|stop|restart|status}"
+        echo "Usage: /etc/init.d/mplayer-web-mouse-control {start|stop|restart|status}"
         exit 1
         ;;
  
