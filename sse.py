@@ -27,7 +27,7 @@ class SSEHandler(tornado.web.RequestHandler):
     def prepare(self):
         self.connection_id = self.generate_id()
 
-    @tornado.web.asynchronous
+    @tornado.gen.coroutine
     def get(self):
         self.flush()
 
@@ -66,7 +66,7 @@ class SSEHandler(tornado.web.RequestHandler):
         """Sends a message to all live connections"""
         [conn.write_message(data, id=id, event=event) for conn in cls._live_connections]
 
-    @tornado.web.asynchronous
+    @tornado.gen.coroutine
     def write_message(self, data, id=False, event=False):
         message = tornado.escape.utf8(('id: %s\n'% (id if id else self.id_counter)) + ('event: %s\n'%event if event else '') + 'data: %s\n\n'%data)
         self.id_counter += 1
