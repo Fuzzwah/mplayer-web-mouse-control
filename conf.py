@@ -1,3 +1,6 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
 # list of directories which contain things we might want to play
 root = ["/home/pi/music"]
 

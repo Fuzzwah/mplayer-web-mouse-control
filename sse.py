@@ -1,3 +1,6 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
 """
 This component is modified from https://github.com/marinho/tornado
 Released under the Apache License http://www.apache.org/licenses/LICENSE-2.0.html

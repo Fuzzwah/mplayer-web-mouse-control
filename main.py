@@ -1,4 +1,5 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 
 import tornado.ioloop, tornado.web, os, json, random, time
 import util, conf, sse, player
