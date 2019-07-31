@@ -21,6 +21,7 @@
     min-width: 84px;
     height: 84px;
 }
+
 /** The Main File List ******************************************/
 
 #file-list {
@@ -66,6 +67,7 @@
     right: 15px;
     margin-top: 10px;
 }
+
 /** The Action Feed *********************************************/
 
 #playlist {
@@ -91,3 +93,4 @@
     font-weight: bold;
     color: #000;
 }
+
