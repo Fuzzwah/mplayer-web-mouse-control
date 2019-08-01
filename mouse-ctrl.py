@@ -41,7 +41,7 @@ while True:
             print('left button')
             print(event.value)
             print('play')
-            params = {'command': 'play', 'target': leftclick_play_dir}
+            params = {'command': 'play', 'target': conf.leftclick_play_dir}
             webmoteurl = 'http://localhost:{}/play'.format(conf.httpport)
             myheaders = {'User-Agent': 'Mozilla/5.0'}
             r = requests.post(webmoteurl, data=params, headers=myheaders)
