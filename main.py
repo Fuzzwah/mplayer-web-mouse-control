@@ -36,6 +36,7 @@ class ServerStatus(sse.FeedHandler):
 
 class Command(tornado.web.RequestHandler):
     def post(self):
+        print(self.get_argument('command'))
         cmd = self.get_argument('command')
         player.commandQueue.put(cmd)
 
