@@ -8,7 +8,6 @@ Released under the Apache License http://www.apache.org/licenses/LICENSE-2.0.htm
 
 import time
 import tornado.web, tornado.escape, tornado.ioloop
-from tornado import gen
 import hashlib, json, random
 
 class SSEHandler(tornado.web.RequestHandler):
@@ -32,7 +31,6 @@ class SSEHandler(tornado.web.RequestHandler):
         self.connection_id = self.generate_id()
 
     @tornado.web.asynchronous
-    @gen.coroutine
     def get(self):
         self.flush()
 
@@ -72,7 +70,6 @@ class SSEHandler(tornado.web.RequestHandler):
         [conn.write_message(data, id=id, event=event) for conn in cls._live_connections]
 
     @tornado.web.asynchronous
-    @gen.coroutine
     def write_message(self, data, id=False, event=False):
         message = tornado.escape.utf8(('id: %s\n'% (id if id else self.id_counter)) + ('event: %s\n'%event if event else '') + 'data: %s\n\n'%data)
         self.id_counter += 1
