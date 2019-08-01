@@ -21,7 +21,7 @@ Note: the page will not work in Chrome for Android. It will work in standard And
     ```
     sudo apt-get install git mplayer python3-setuptools python3-pip build-essential python3-dev evtest 
     sudo pip3 install --upgrade pip 
-    sudo pip3 install requests evdev tornado
+    sudo pip3 install requests evdev tornado==5.1.1
     ```
 
 3) If you're going to use the mouse controls, run `sudo evtest` and look through the devices and find your mouse:
