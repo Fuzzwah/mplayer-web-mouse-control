@@ -54,8 +54,7 @@ def playFile(playerCmd, fileName, cmdTable):
             __clearQueue(playQ)
             activePlayer.terminate()
             return False
-        except:
-            None
+
     ServerStatus.send(util.nameToTitle(fileName), event="finished")
     return True
 
