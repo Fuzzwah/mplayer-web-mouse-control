@@ -3,7 +3,7 @@
 
 from subprocess import Popen, PIPE, call
 from threading import Thread
-from queue import Queue
+from Queue import Queue
 import os
 import util, conf
 from main import ServerStatus
