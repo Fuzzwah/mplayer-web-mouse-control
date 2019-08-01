@@ -1,3 +1,6 @@
+#!/usr/bin/env python2
+# -*- coding: utf-8 -*-
+
 from subprocess import Popen, PIPE, call
 from threading import Thread
 from queue import Queue
@@ -43,13 +46,16 @@ def playFile(playerCmd, fileName, cmdTable):
     __clearQueue(commandQueue)
     activePlayer = Popen(playerCmd + [fileName], stdin=PIPE)
     while activePlayer.poll() == None:
-        res = commandQueue.get(timeout=1).decode('utf_8')
-        activePlayer.stdin.write(cmdTable[res])
-        if unicode(res) == unicode("stop"):
-            ServerStatus.send(util.nameToTitle(fileName), event="stopped")
-            __clearQueue(playQ)
-            activePlayer.terminate()
-            return False
+        try:
+            res = commandQueue.get(timeout=1)
+            activePlayer.stdin.write(cmdTable[res])
+            if unicode(res) == unicode("stop"):
+                ServerStatus.send(util.nameToTitle(fileName), event="stopped")
+                __clearQueue(playQ)
+                activePlayer.terminate()
+                return False
+        except:
+            None
     ServerStatus.send(util.nameToTitle(fileName), event="finished")
     return True
 
