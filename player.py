@@ -1,6 +1,6 @@
 from subprocess import Popen, PIPE, call
 from threading import Thread
-import queue as Queue
+from queue import Queue
 import os
 import util, conf
 from main import ServerStatus
