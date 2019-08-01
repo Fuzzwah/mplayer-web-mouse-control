@@ -24,7 +24,40 @@ Note: the page will not work in Chrome for Android. It will work in standard And
     sudo pip3 install requests evdev tornado
     ```
 
-3) Configure a few things, open each of the following files in a text editor and find the config section to get things set up:
+3) If you're going to use the mouse controls, run `sudo evtest` and look through the devices and find your mouse:
+
+    ```
+    $ sudo evtest
+    No device specified, trying to scan all of /dev/input/event*
+    Available devices:
+    /dev/input/event0:	Chicony Wireless Device
+    /dev/input/event1:	Chicony Wireless Device Consumer Control
+    /dev/input/event2:	Chicony Wireless Device System Control
+    /dev/input/event3:	Chicony Wireless Device
+    /dev/input/event4:	Chicony Wireless Device
+    Select the device event number [0-4]: 4
+    Input driver version is 1.0.1
+    Input device ID: bus 0x3 vendor 0x4f2 product 0x976 version 0x111
+    Input device name: "Chicony Wireless Device"
+    Supported events:
+      Event type 0 (EV_SYN)
+      Event type 1 (EV_KEY)
+        Event code 272 (BTN_LEFT)
+        Event code 273 (BTN_RIGHT)
+        Event code 274 (BTN_MIDDLE)
+      Event type 2 (EV_REL)
+        Event code 0 (REL_X)
+        Event code 1 (REL_Y)
+        Event code 8 (REL_WHEEL)
+      Event type 4 (EV_MSC)
+        Event code 4 (MSC_SCAN)
+    Properties:
+    Testing ... (interrupt to exit)    
+    ```
+    
+    In the above example, `/dev/input/event4` is our mouse.
+
+4) Configure a few things, open each of the following files in a text editor and find the config section to get things set up:
 
     ```
     cd mplayer-web-mouse-control
@@ -32,7 +65,7 @@ Note: the page will not work in Chrome for Android. It will work in standard And
     nano conf.py
     ```
 
-4) If you want to run the system as a service do the following:
+5) If you want to run the system as a service do the following:
 
     ```
     sudo chmod 755 main.py
