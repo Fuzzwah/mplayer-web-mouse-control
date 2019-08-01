@@ -46,15 +46,14 @@ def playFile(playerCmd, fileName, cmdTable):
     __clearQueue(commandQueue)
     activePlayer = Popen(playerCmd + [fileName], stdin=PIPE)
     while activePlayer.poll() == None:
-        try:
-            res = commandQueue.get(timeout=1)
-            print(res)
-            activePlayer.stdin.write(cmdTable[res])
-            if unicode(res) == unicode("stop"):
-                ServerStatus.send(util.nameToTitle(fileName), event="stopped")
-                __clearQueue(playQ)
-                activePlayer.terminate()
-                return False
+        res = commandQueue.get(timeout=1)
+        print(res)
+        activePlayer.stdin.write(cmdTable[res])
+        if unicode(res) == unicode("stop"):
+            ServerStatus.send(util.nameToTitle(fileName), event="stopped")
+            __clearQueue(playQ)
+            activePlayer.terminate()
+            return False
         except:
             None
     ServerStatus.send(util.nameToTitle(fileName), event="finished")
