@@ -1,6 +1,6 @@
 ## MPlayer Web and Mouse Remote Control
 
-A Python3 based HTTP server which passes commands to mplayer from a website and mouse buttons.
+A Python based HTTP server which passes commands to mplayer from a website and mouse buttons.
 
 #### Purpose
 
@@ -19,9 +19,9 @@ Note: the page will not work in Chrome for Android. It will work in standard And
 2) If you're on Raspbian, Debian or Ubuntu, you can install everything else you need by running the following commands:
 
     ```
-    sudo apt-get install git mplayer python3-setuptools python3-pip build-essential python3-dev evtest 
-    sudo pip3 install --upgrade pip 
-    sudo pip3 install requests evdev tornado==4.5.3
+    sudo apt-get install git mplayer python-setuptools python-pip build-essential python-dev evtest 
+    sudo pip2 install --upgrade pip 
+    sudo pip2 install requests evdev tornado==4.5.3
     ```
 
 3) If you're going to use the mouse controls, run `sudo evtest` and look through the devices and find your mouse:
@@ -81,8 +81,8 @@ Note: the page will not work in Chrome for Android. It will work in standard And
 
     ```
     sudo apt-get install screen
-    screen -dmS mplayer-web sudo python3 main.py
-    screen -dmS mplayer-mouse sudo python3 mouse-ctrl.py
+    screen -dmS mplayer-web sudo python2 main.py
+    screen -dmS mplayer-mouse sudo python2 mouse-ctrl.py
     ```
 
     Then you can attach to each screen using `screen -r mplayer-web` or `screen -r mplayer-mouse` and detach with `Ctrl+a Ctrl+d`.
